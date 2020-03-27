@@ -1,14 +1,41 @@
-import React from 'react'
-import { NextPage } from 'next'
+//export default Search
+import React, { Component } from 'react'
+import { FaAlignRight } from 'react-icons/fa'
 
-const Home: NextPage = () => {
-  const { SITE_NAME } = process.env
+class Search extends Component<any, any> {
+  constructor(props: any) {
+    super(props)
+    this.state = {
+      query: '',
+      results: {},
+      loading: false,
+    }
+  }
 
-  return (
-    <h1 data-testid="helloH1" className="text-xl text-gray-900">
-      Hello from <u>{SITE_NAME}</u>.
-    </h1>
-  )
+  handleInputChange = (event: any) => {
+    const query = event.target.value
+    console.warn(query)
+  }
+
+  render() {
+    return (
+      <div className="container">
+        {/* Heading */}
+        <h2 className="heading">Live Search</h2>
+        {/* Search Input */}
+        <label className="search-label" htmlFor="search-input">
+          <input
+            type="text"
+            value=""
+            id="search-input"
+            placeholder="Search..."
+            onChange={this.handleInputChange}
+          />
+          <FaAlignRight />
+        </label>
+      </div>
+    )
+  }
 }
 
-export default Home
+export default Search

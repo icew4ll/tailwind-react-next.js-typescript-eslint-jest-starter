@@ -3,6 +3,9 @@
 .next
 .vscode
 
+# ctags
+tags
+
 # testing
 /coverage
 
