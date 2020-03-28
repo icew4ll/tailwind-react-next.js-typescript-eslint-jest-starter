@@ -1,13 +1,14 @@
 import React from 'react'
-import { NextPage } from 'next'
-import Search from '../../components/search'
+import { Card } from '../../components/card'
+import { Clock } from '../../components/clock'
 
-const Home: NextPage = () => {
-  const { SITE_NAME } = process.env
-
+const Home = () => {
   return (
     <div>
-      <Search />
+      {/* functional component */}
+      <Card title="Welcome!" paragraph="To this example" />
+      {/* clock component */}
+      <Clock />
     </div>
   )
 }

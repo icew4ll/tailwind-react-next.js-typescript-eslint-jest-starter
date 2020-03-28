@@ -14,10 +14,15 @@ class Search extends Component<any, any> {
 
   handleInputChange = (event: any) => {
     const query = event.target.value
+    //this.setState( state: { query } )
+    this.setState( state: { query } )
     console.warn(query)
   }
 
   render() {
+    // pull query out of state
+    const { query } = this.state
+    console.warn(this.state)
     return (
       <div className="container">
         {/* Heading */}
@@ -26,7 +31,8 @@ class Search extends Component<any, any> {
         <label className="search-label" htmlFor="search-input">
           <input
             type="text"
-            value=""
+            name="query"
+            value={query}
             id="search-input"
             placeholder="Search..."
             onChange={this.handleInputChange}
