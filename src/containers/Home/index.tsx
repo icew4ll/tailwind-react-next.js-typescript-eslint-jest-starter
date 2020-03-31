@@ -4,7 +4,7 @@ import { Clock } from '../../components/clock'
 import { Hook } from '../../components/hook'
 import { TextField } from '../../components/TextField'
 import { Counter } from '../../components/counter'
-import { Sum } from '../../components/sum'
+import Input from '../../components/input'
 
 const Home = () => {
   return (
@@ -25,7 +25,9 @@ const Home = () => {
           </div>
         )}
       </Counter>
-      <Sum />
+      <Input />
+      <Input />
+      <Input />
       {/* clock component */}
     </div>
   )
