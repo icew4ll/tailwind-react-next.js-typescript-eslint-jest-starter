@@ -1,4 +1,10 @@
-import * as React from 'react'
+import React, { FC } from 'react'
+
+//interface Props {}
+
+//export const Input: FC<Props> = () => {
+
+//import * as React from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 
@@ -6,7 +12,7 @@ type Props = {
   title?: string
 }
 
-const Layout: React.FunctionComponent<Props> = ({ children, title = 'This is the default title' }) => (
+const Layout: FC<Props> = ({ children, title = 'This is the default title' }) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -15,6 +21,9 @@ const Layout: React.FunctionComponent<Props> = ({ children, title = 'This is the
     </Head>
     <header>
       <nav>
+        <Link href="/">
+          <a>Home</a>
+        </Link>
         <Link href="/">
           <a>Home</a>
         </Link>
