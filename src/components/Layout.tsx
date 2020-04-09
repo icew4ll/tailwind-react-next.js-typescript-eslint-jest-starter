@@ -28,7 +28,7 @@ const Layout: FC<Props> = ({ children, title = 'This is the default title' }) =>
     <header>
       <nav className="flex flex-no-wrap bg-gray-500">
         {links.map((link) => (
-          <div className="px-1">
+          <div key={link.key} className="px-1">
             <Link href={link.url}>
               <a>{link.name}</a>
             </Link>
