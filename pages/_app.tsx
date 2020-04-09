@@ -2,6 +2,7 @@
 import React from 'react'
 import ParentApp from 'next/app'
 import '@src/css/tailwind.css'
+import '@src/css/alpha.css'
 
 class MyApp extends ParentApp {
   render() {

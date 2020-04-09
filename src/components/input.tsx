@@ -12,7 +12,7 @@ export const Input: FC<Props> = () => {
   }
 
   return (
-    <div>
+    <div className="bg-gray-500">
       <input value={name} onChange={handleChange} />
       <p>{name}</p>
     </div>

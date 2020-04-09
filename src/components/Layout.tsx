@@ -12,25 +12,32 @@ type Props = {
   title?: string
 }
 
+const links = [
+  { key: 0, url: '/', name: 'Home' },
+  { key: 1, url: '/about', name: 'About' },
+]
+
 const Layout: FC<Props> = ({ children, title = 'This is the default title' }) => (
-  <div>
+  <div className="px-2 bg-gray-500">
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" rel="stylesheet" />
     </Head>
     <header>
-      <nav>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
+      <nav className="flex flex-no-wrap bg-gray-500">
+        {links.map((link) => (
+          <div className="px-1">
+            <Link href={link.url}>
+              <a>{link.name}</a>
+            </Link>
+          </div>
+        ))}
       </nav>
     </header>
     {children}
-    <footer>
+    <footer className="bg-gray-500">
       <hr />
       <span>I'm here to stay (Footer)</span>
     </footer>
