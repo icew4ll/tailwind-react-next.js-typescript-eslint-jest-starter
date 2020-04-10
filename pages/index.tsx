@@ -2,15 +2,16 @@ import React, { FC } from 'react'
 import Layout from '../src/components/Layout'
 import Link from 'next/link'
 import { Input } from '../src/components/input'
-import Latex from 'react-latex'
+import { Pyth } from '../src/components/Pyth'
+import { Img } from '../src/components/Img'
+import { Kjv } from '../src/components/Kjv'
 
 const Home: FC = () => (
   <Layout title="Home | Next.js + TypeScript Example">
     <h1>Sup Next.js 👋</h1>
-    <Input />
-    <h3>
-      <Latex>What is $(3\times 4) \div (5-3)$</Latex>
-    </h3>
+    <Kjv />
+    <Pyth />
+    <Img />
   </Layout>
 )
 
