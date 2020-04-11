@@ -5,13 +5,11 @@ import { Input } from '../src/components/input'
 import { Pyth } from '../src/components/Pyth'
 import { Img } from '../src/components/Img'
 import { Kjv } from '../src/components/Kjv'
+import { UseState } from '../src/components/UseState'
 
 const Home: FC = () => (
   <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Sup Next.js 👋</h1>
     <Kjv />
-    <Pyth />
-    <Img />
   </Layout>
 )
 

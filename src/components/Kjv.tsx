@@ -8,11 +8,28 @@ interface Props {}
 export const Kjv: FC<Props> = () => {
   const [name, setValue] = useState<string>('')
 
-  const data = require('../../public/test.json')
+  // import kjv json
+  let data = require('../../public/test.json')
 
-  console.log(data)
+  let index = elasticlunr(function (this: any) {
+    this.addField('book')
+    this.addField('chapter')
+    this.addField('verse')
+    this.addField('body')
+    this.setRef('id')
+  })
+
+  let arr: any = []
+  data.forEach((item: any) => {
+    arr.push(item)
+    index.addDoc(item)
+  })
+
+  let results = index.search('beginning', {})
+  console.log(index.documentStore.docs['1'])
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
+    //console.log(e.target.value)
     setValue(e.target.value)
   }
 
@@ -20,7 +37,13 @@ export const Kjv: FC<Props> = () => {
     <div className="bg-gray-500">
       <input value={name} onChange={handleChange} />
       <p>{name}</p>
-      <p>{data['0']['0']}</p>
+      {/*
+      <ul>
+        {data.map((verse: any) => {
+          return <li key={verse.id}>{verse.body}</li>
+        })}
+      </ul>
+      */}
     </div>
   )
 }
