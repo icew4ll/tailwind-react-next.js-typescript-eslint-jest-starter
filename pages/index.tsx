@@ -6,10 +6,11 @@ import { Pyth } from '../src/components/Pyth'
 import { Img } from '../src/components/Img'
 import { Kjv } from '../src/components/Kjv'
 import { UseState } from '../src/components/UseState'
+import Async from '../src/components/Async';
 
 const Home: FC = () => (
   <Layout title="Home | Next.js + TypeScript Example">
-    <Kjv />
+    <Async />
   </Layout>
 )
 
