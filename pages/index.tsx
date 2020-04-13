@@ -7,10 +7,11 @@ import { Img } from '../src/components/Img'
 import { Kjv } from '../src/components/Kjv'
 import { UseState } from '../src/components/UseState'
 import Async from '../src/components/Async';
+import { Axios } from '../src/components/Axios';
 
 const Home: FC = () => (
   <Layout title="Home | Next.js + TypeScript Example">
-    <Async />
+    <Axios />
   </Layout>
 )
 

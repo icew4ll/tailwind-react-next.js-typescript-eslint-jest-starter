@@ -21,10 +21,14 @@ export const Async: FC<Props> = () => {
     //console.log({ query })
     const fetchData = async () => {
       try {
-        const url = 'https://jsonplaceholder.typicode.com/users/3'
-        const response = await fetch(url)
-        const json = await response.json()
-        setResults(json.address.city)
+        axios
+          .get('t2.json')
+          .then((res: any) => {
+            console.log(res.data)
+          })
+          .catch((err: any) => {
+            console.log(err)
+          })
       } catch (error) {}
     }
 

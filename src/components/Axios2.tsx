@@ -3,7 +3,7 @@ import axios from 'axios'
 
 interface Props {}
 
-export const Async: FC<Props> = () => {
+export const Axios: FC<Props> = () => {
   const [search, setSearch] = useState('')
   const [query, setQuery] = useState('')
   const [results, setResults] = useState([])
@@ -20,12 +20,14 @@ export const Async: FC<Props> = () => {
   useEffect(() => {
     //console.log({ query })
     const fetchData = async () => {
-      try {
-        const url = 'https://jsonplaceholder.typicode.com/users/3'
-        const response = await fetch(url)
-        const json = await response.json()
-        setResults(json.address.city)
-      } catch (error) {}
+      axios
+        .get('test.json')
+        .then((res: any) => {
+          console.log(res.data)
+        })
+        .catch((err: any) => {
+          console.log(err)
+        })
     }
 
     if (query !== '') {
@@ -46,5 +48,5 @@ export const Async: FC<Props> = () => {
   )
 }
 
-export default Async
+export default Axios
 //https://www.youtube.com/watch?v=HQq5Sod8AEk&t=273s
