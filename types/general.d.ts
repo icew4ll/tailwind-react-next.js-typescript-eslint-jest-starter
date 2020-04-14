@@ -1,3 +1,5 @@
-declare module 'react-latex';
-declare module 'elasticlunr';
-declare module 'uuid';
+declare module 'react-latex'
+declare module 'elasticlunr'
+declare module 'uuid'
+declare module 'react-use-flexsearch'
+declare module 'formik'

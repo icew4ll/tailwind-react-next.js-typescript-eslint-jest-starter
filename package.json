@@ -22,6 +22,7 @@
     "cssnano": "^4.1.10",
     "dotenv": "^8.2.0",
     "elasticlunr": "^0.9.5",
+    "formik": "^2.1.4",
     "next": "^9.3.4",
     "postcss-import": "^12.0.1",
     "react": "^16.13.1",

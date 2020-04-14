@@ -6,12 +6,14 @@ import { Pyth } from '../src/components/Pyth'
 import { Img } from '../src/components/Img'
 import { Kjv } from '../src/components/Kjv'
 import { UseState } from '../src/components/UseState'
-import Async from '../src/components/Async';
-import { Axios } from '../src/components/Axios';
+import Async from '../src/components/Async'
+import { Axios } from '../src/components/Axios'
+import Flex from '../src/components/Flex'
+//import Counter from '../src/components/counter'
 
 const Home: FC = () => (
   <Layout title="Home | Next.js + TypeScript Example">
-    <Axios />
+    <Flex />
   </Layout>
 )
 

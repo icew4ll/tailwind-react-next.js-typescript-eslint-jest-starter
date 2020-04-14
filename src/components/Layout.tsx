@@ -18,7 +18,7 @@ const links = [
 ]
 
 const Layout: FC<Props> = ({ children, title = 'This is the default title' }) => (
-  <div className="px-2 bg-gray-500">
+  <div className="px-2 bg-purple-500">
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -26,7 +26,7 @@ const Layout: FC<Props> = ({ children, title = 'This is the default title' }) =>
       <link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" rel="stylesheet" />
     </Head>
     <header>
-      <nav className="flex flex-no-wrap bg-gray-500">
+      <nav className="flex flex-no-wrap bg-green-500">
         {links.map((link) => (
           <div key={link.key} className="px-1">
             <Link href={link.url}>
