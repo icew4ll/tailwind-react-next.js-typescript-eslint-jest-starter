@@ -9,7 +9,6 @@ const Flex: FC<Props> = () => {
   const index = new FlexSearch('speed')
 
   // 2) add index
-  const url = 'test.json'
   const fetchData = async (url: any) => {
     try {
       const response = await axios.get(url)
@@ -21,27 +20,41 @@ const Flex: FC<Props> = () => {
   //fetchData(url).then(console.log)
 
   const search = async (db: any, query: any) => {
-    db.map(async (item: any) => {
-      const [id, body] = [item.id, item.body]
-      index.add(id, body)
-    })
-    return index.search(query)
+    try {
+      db.map(async (item: any) => {
+        const [id, body] = [item.id, item.body]
+        index.add(id, body)
+      })
+      return index.search(query)
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   const find = async (db: any, arr: any) => {
-    let a: any = []
-    arr.map(async (item: any) => {
-      const i = item - 1
-      a.push(db[i].body)
-    })
-    return a
+    try {
+      let a: any = []
+      arr.map(async (item: any) => {
+        const i = item - 1
+        a.push(db[i].body)
+      })
+      return a
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   const filter = async () => {
-    const db = await fetchData(url)
-    const result = await search(db, 'beginning')
-    const out = await find(db, result)
-    return out
+    try {
+      const url = 'test.json'
+      const query = 'God'
+      const db = await fetchData(url)
+      const result = await search(db, query)
+      const out = await find(db, result)
+      return out
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   //dowork().then(console.log)
