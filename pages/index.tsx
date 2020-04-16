@@ -9,11 +9,12 @@ import { UseState } from '../src/components/UseState'
 import Async from '../src/components/Async'
 import { Axios } from '../src/components/Axios'
 import Flex from '../src/components/Flex'
+import Query from '../src/components/Query'
 //import Counter from '../src/components/counter'
 
 const Home: FC = () => (
   <Layout title="Home | Next.js + TypeScript Example">
-    <Flex />
+    <Query />
   </Layout>
 )
 

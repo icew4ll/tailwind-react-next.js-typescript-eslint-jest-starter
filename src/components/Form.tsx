@@ -1,4 +1,5 @@
 import React, { FC, useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 //import React, { FC, useState, ChangeEvent } from 'react'
 
 interface Props {}
@@ -10,7 +11,7 @@ export const Form: FC<Props> = () => {
     { title: 't3', id: 3 },
   ])
   const addSong = () => {
-    setSongs([...songs, { title: 'new song', id: uuid() }])
+    setSongs([...songs, { title: 'new song', id: uuidv4() }])
   }
   return (
     <div className="bg-gray-500">
