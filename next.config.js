@@ -3,7 +3,6 @@ require('dotenv').config()
 
 const ENV_VARS = {
   SITE_NAME: process.env.SITE_NAME,
-  ANALYZE: true,
 }
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
