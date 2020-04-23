@@ -1,6 +1,4 @@
 //import { useState } from 'react'
-import { useRouter } from 'next/router'
-import Link from 'next/link'
 import ActiveLink from './ActiveLink'
 
 const links = [
@@ -11,12 +9,7 @@ const links = [
 export default function ClassName() {
   //const [active, setActive] = useState('CAD')
 
-  const router = useRouter()
-  //console.log(router.pathname)
-  let color = router.pathname === '/' ? 'green' : 'red'
-  console.log(color)
 
-  let aCSS = `bg-${color}-800 rounded-md px-2 shadow-md shadow-inner`
   let navCSS = 'flex flex-no-wrap rounded-md shadow-lg bg-green-600'
 
   return (
