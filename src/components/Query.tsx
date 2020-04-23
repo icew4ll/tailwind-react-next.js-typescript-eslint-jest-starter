@@ -1,7 +1,5 @@
-import React, { FC, useState } from 'react'
+import { useState } from 'react'
 import { useQuery } from 'react-query'
-
-interface Props {}
 
 export default function Query() {
   return (
@@ -19,12 +17,12 @@ const fetchExchange = async (currency: any) => {
   return data
 }
 
-function Exchange() {
+const Exchange = () => {
   const [currency, setCurrency] = useState('CAD')
   const { status, data, error } = useQuery(currency, fetchExchange)
 
   if (status === 'loading') return <div>loading...</div>
-  if (status === 'error') return <div>error!</div>
+  if (status === 'error') return <div>error! {error} </div>
 
   return (
     <div>
