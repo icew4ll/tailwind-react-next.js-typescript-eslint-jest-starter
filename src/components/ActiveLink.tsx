@@ -1,3 +1,4 @@
+import React from 'react'
 import { useRouter } from 'next/router'
 
 interface Props {
@@ -13,12 +14,15 @@ export default function ActiveLink({ children, href }: Props) {
     router.push(href)
   }
 
-  let active = router.pathname === href ? 'red' : 'green'
-  let color = `bg-${active}-800 rounded-md px-2 shadow-md shadow-inner`
+  const style = {
+    color: router.pathname === href ? 'red' : 'black',
+  }
 
   return (
-    <a href={href} onClick={handleClick} className={color}>
-      {children}
-    </a>
+    <div className="bg-green-700 px-1">
+      <a href={href} onClick={handleClick} style={style}>
+        {children}
+      </a>
+    </div>
   )
 }

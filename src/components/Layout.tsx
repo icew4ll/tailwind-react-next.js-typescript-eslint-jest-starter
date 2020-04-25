@@ -9,7 +9,7 @@ type Props = {
 const katex = '//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css'
 
 const Layout: FC<Props> = ({ children, title = 'This is the default title' }) => (
-  <div className="px-2 bg-gray-700 text-white">
+  <div className="px-2 bg-gray-800 text-white">
     {/* head */}
     <Head>
       <title>{title}</title>

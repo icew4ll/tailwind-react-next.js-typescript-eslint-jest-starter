@@ -9,7 +9,6 @@ const links = [
 export default function ClassName() {
   //const [active, setActive] = useState('CAD')
 
-
   let navCSS = 'flex flex-no-wrap rounded-md shadow-lg bg-green-600'
 
   return (
