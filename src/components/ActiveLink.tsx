@@ -18,6 +18,9 @@ export default function ActiveLink({ children, href }: Props) {
     color: router.pathname === href ? 'red' : 'black',
   }
 
+  // get url params
+  // console.log(router.query)
+
   return (
     <div className="bg-green-700 px-1">
       <a href={href} onClick={handleClick} style={style}>

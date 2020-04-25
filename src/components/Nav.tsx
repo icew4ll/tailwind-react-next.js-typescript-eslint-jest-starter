@@ -1,5 +1,6 @@
 //import { useState } from 'react'
 import ActiveLink from './ActiveLink'
+import { useRouter } from 'next/router'
 
 const links = [
   { key: 0, url: '/', name: 'Home' },
@@ -8,6 +9,7 @@ const links = [
 
 export default function ClassName() {
   //const [active, setActive] = useState('CAD')
+  const router = useRouter()
 
   let navCSS = 'flex flex-no-wrap rounded-md shadow-lg bg-green-600'
 
@@ -20,6 +22,7 @@ export default function ClassName() {
           </div>
         ))}
       </nav>
+      <p>{router.query.test}</p>
     </header>
   )
 }
