@@ -1,4 +1,5 @@
 declare module 'react-latex'
+declare module 'react-katex'
 declare module 'elasticlunr'
 declare module 'uuid'
 declare module 'react-use-flexsearch'
