@@ -1,5 +1,5 @@
-import Input from '../../components/input'
 import Layout from '../../components/Layout'
+import { Input } from '../../components/proto/input';
 
 const Home = () => {
   return (

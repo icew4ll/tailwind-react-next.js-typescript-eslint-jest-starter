@@ -15,7 +15,7 @@ export default function ActiveLink({ children, href }: Props) {
   }
 
   const style = {
-    color: router.pathname === href ? 'red' : 'black',
+    color: router.pathname === href ? '#3379ca' : 'black',
   }
 
   // get url params
