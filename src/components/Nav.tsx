@@ -11,7 +11,7 @@ export default function ClassName() {
   //const [active, setActive] = useState('CAD')
   const router = useRouter()
 
-  let navCSS = 'flex flex-no-wrap rounded-md shadow-lg bg-green-600'
+  let navCSS = 'flex flex-no-wrap rounded-md shadow-lg'
 
   return (
     <header>

@@ -10,8 +10,10 @@ export const Pyth: FC<Props> = () => {
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     // numbers only input
+    const radius = 3963
+    const feet = 5280
     setValue(e.target.value.replace(/\D/, ''))
-    set2((Math.sqrt(parseInt(e.target.value.replace(/\D/, '')) ** 2 + 3959 ** 2) - 3959) * 5280)
+    set2((Math.sqrt(parseInt(e.target.value.replace(/\D/, '')) ** 2 + radius ** 2) - radius) * feet)
   }
 
   return (
@@ -26,18 +28,18 @@ export const Pyth: FC<Props> = () => {
             <li>
               <InlineMath>{'a^{2} + b^{2} = c^{2}'}</InlineMath>
             </li>
-            <li>Alleged Radius of Earth: 3959 Miles</li>
             <li>
-              <InlineMath>{'3959^{2} + b^{2} = (3959+h)^{2}'}</InlineMath>
+              <InlineMath>{'a^{2} + b^{2} = (a + h)^{2}'}</InlineMath>
             </li>
             <li>
-              <InlineMath>{'h = \\sqrt{3959^{2} + b^{2}} - 3959'}</InlineMath>
+              <InlineMath>{'h = \\sqrt{a^{2} + b^{2}} - a'}</InlineMath>
             </li>
+            <li>a (miles) = 3963</li>
+            <li>b (miles) = {b}</li>
             <li>
-              b in miles:
               <input className="text-gray-900" value={b} onChange={handleChange} />
             </li>
-            <li>h = {b2} feet</li>
+            <li>h = {b2} hidden height (feet)</li>
           </ul>
         </div>
       </div>

@@ -24,10 +24,6 @@ const Layout: FC<Props> = ({ children, title = 'This is the default title' }) =>
         <Nav />
         {/* Children */}
         <div className="px-2">{children}</div>
-        {/* Footer */}
-        <footer className="rounded-md shadow-lg bg-green-600">
-          <span>I'm here to stay (Footer)</span>
-        </footer>
       </div>
     </div>
   </div>
