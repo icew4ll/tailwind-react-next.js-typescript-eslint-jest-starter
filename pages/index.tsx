@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
 import Layout from '../src/components/Layout'
-import { Pyth } from '../src/components/Pyth'
+import Formk from '../src/components/proto/Formk'
 
 const Home: FC = () => (
   <Layout title="Home | Next.js + TypeScript Example">
-    <Pyth />
+    <Formk />
   </Layout>
 )
 

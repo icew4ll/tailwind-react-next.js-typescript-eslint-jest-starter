@@ -9,7 +9,7 @@ export const Pyth: FC<Props> = () => {
   const [height, setHeight] = useState<string>('')
   const [hiddenHeight, setHH] = useState<number>(0)
   const [distanceHorizon, setDH] = useState<number>(0)
-  const [inputs, setInputs] = useState({ string })
+  const [inputs, setInputs] = useState({})
   //const radius = 3963
   const radius = 3958.756
   const feet = 5280
@@ -82,7 +82,7 @@ export const Pyth: FC<Props> = () => {
             <li>Alleged Earth Radius = {radius} miles</li>
             <li>Distance from Observer to Target = {b} miles</li>
             <li>
-              <input name="hidden" className="text-gray-900" onChange={handleInputChange} />
+              <input name="hidden" className="text-gray-900" onChange={handleHidden} />
             </li>
             <li>Hidden Height = {hiddenHeight} feet</li>
           </ul>
