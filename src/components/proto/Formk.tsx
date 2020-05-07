@@ -1,21 +1,7 @@
-import { useFormik } from 'formik'
+import { Formik } from 'formik'
 import * as Yup from 'yup'
 
 export default function Formk() {
-  const initialValues = {
-    height: 0,
-    distance: 0,
-  }
-
-  const validationSchema = Yup.object().shape({
-    height: Yup.number().positive('Must be positive number').required('Required'),
-  })
-
-  const { handleChange, values, errors } = useFormik({
-    initialValues,
-    validationSchema,
-  })
-
   const radius = 3958.756
   const feet = 5280
 
@@ -24,11 +10,47 @@ export default function Formk() {
 
   return (
     <div>
-      <input name="height" onChange={handleChange} value={values.height} />
-      {errors.height ? "Must be positive number" : null}
-      {dh}
-      <input name="distance" onChange={handleChange} value={values.distance} />
-      {hh}
+      <Formik
+        initialValues={{ horizon: '', hidden: '' }}
+        validationSchema={Yup.object().shape({
+          horizon: Yup.number().required('Required'),
+        })}
+      >
+        {(props: any) => {
+          const { values, touched, errors, isSubmitting, handleChange, handleBlur, handleSubmit, setFieldValue } = props
+          return (
+            <div>
+              <input
+                id="horizon"
+                placeholder="Enter Observer Height"
+                type="text"
+                value={values.horizon}
+                onChange={(e) => {
+                  const { value } = e.target
+                  setFieldValue('horizon', value.replace(/\D/, ''))
+                }}
+                onBlur={handleBlur}
+                className="bg-gray-700"
+              />
+              {values.horizon}
+              <br />
+              <input
+                id="hidden"
+                placeholder="Enter Distance from Observer to Target"
+                type="text"
+                value={values.hidden}
+                onChange={(e) => {
+                  const { value } = e.target
+                  setFieldValue('hidden', value.replace(/\D/, ''))
+                }}
+                onBlur={handleBlur}
+                className="bg-gray-700"
+              />
+              {values.hidden}
+            </div>
+          )
+        }}
+      </Formik>
     </div>
   )
 }
