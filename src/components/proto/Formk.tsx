@@ -5,48 +5,53 @@ export default function Formk() {
   const radius = 3958.756
   const feet = 5280
 
-  let dh = Math.sqrt((radius + values.height / feet) ** 2 - radius ** 2)
-  let hh = (Math.sqrt((values.distance - dh) ** 2 + radius ** 2) - radius) * feet
-
   return (
     <div>
       <Formik
-        initialValues={{ horizon: '', hidden: '' }}
+        initialValues={{ observer: '', distance: '' }}
         validationSchema={Yup.object().shape({
           horizon: Yup.number().required('Required'),
         })}
       >
         {(props: any) => {
-          const { values, touched, errors, isSubmitting, handleChange, handleBlur, handleSubmit, setFieldValue } = props
+          const { values, handleBlur, setFieldValue } = props
           return (
             <div>
               <input
-                id="horizon"
+                id="observer"
                 placeholder="Enter Observer Height"
                 type="text"
-                value={values.horizon}
+                value={values.observer}
                 onChange={(e) => {
                   const { value } = e.target
-                  setFieldValue('horizon', value.replace(/\D/, ''))
+                  setFieldValue('observer', value.replace(/\D/, ''))
                 }}
                 onBlur={handleBlur}
                 className="bg-gray-700"
               />
-              {values.horizon}
+              {values.observer}
+              <br />
+              {Math.sqrt((radius + values.observer / feet) ** 2 - radius ** 2)}
               <br />
               <input
-                id="hidden"
+                id="distance"
                 placeholder="Enter Distance from Observer to Target"
                 type="text"
-                value={values.hidden}
+                value={values.distance}
                 onChange={(e) => {
                   const { value } = e.target
-                  setFieldValue('hidden', value.replace(/\D/, ''))
+                  setFieldValue('distance', value.replace(/\D/, ''))
                 }}
                 onBlur={handleBlur}
                 className="bg-gray-700"
               />
-              {values.hidden}
+              {values.distance}
+              <br />
+              {(Math.sqrt(
+                (values.distance - Math.sqrt((radius + values.observer / feet) ** 2 - radius ** 2)) ** 2 + radius ** 2,
+              ) -
+                radius) *
+                feet}
             </div>
           )
         }}
