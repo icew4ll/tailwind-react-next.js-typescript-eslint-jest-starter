@@ -1,6 +1,6 @@
 import React, { FC, useState, ChangeEvent } from 'react'
 import { InlineMath } from 'react-katex'
-import Svg from './Svg'
+import Svg from './Svg';
 
 interface Props {}
 
